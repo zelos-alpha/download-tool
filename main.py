@@ -1,10 +1,9 @@
 import sys
-
 import demeter_fetch.common.utils as utils
-from demeter_fetch.core import get_commend_args, download
+from demeter_fetch.core import download, get_commend_args
 from demeter_fetch.tools import date_to_height, block_timestamp_cache
 
-if __name__ == "__main__":
+def main():
     if len(sys.argv) == 1:
         utils.print_log("use parameter -h for help")
         exit(1)
@@ -21,3 +20,6 @@ if __name__ == "__main__":
         elif args.tools == "block_timestamp":
             block_timestamp_cache(args)
         pass
+
+if __name__ == "__main__":
+    main()
